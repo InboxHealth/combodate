@@ -472,6 +472,15 @@
             return v <= 9 ? '0' + v : v;
         },
 
+        updateCustomClass: function(customClass) {
+            var that = this;
+            $.each(this.map, function (k) {
+                if (that['$' + k]) {
+                    that['$' + k].prop('class', k + ' ' + customClass)
+                }
+            });
+        },
+
         destroy: function() {
             this.$widget.remove();
             this.$element.removeData('combodate').show();

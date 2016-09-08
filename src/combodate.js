@@ -481,6 +481,15 @@
             });
         },
 
+        updateDisabled: function(disabled) {
+            var that = this;
+            $.each(this.map, function (k) {
+                if (that['$' + k]) {
+                    that['$' + k].prop('disabled', disabled)
+                }
+            });
+        },
+
         destroy: function() {
             this.$widget.remove();
             this.$element.removeData('combodate').show();
